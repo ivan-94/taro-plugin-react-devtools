@@ -1,6 +1,6 @@
 {
   "name": "taro-plugin-react-devtools",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Taro 小程序端支持 React Devtools",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
@@ -10,6 +10,9 @@
     "build-esm": "tsc",
     "build": "npm run build-esm && npm run build-cjs"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@tarojs/service": "^3.2.7",
     "@types/react": "^17.0.5",
