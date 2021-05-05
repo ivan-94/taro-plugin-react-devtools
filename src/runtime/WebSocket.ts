@@ -1,4 +1,4 @@
-import global from './global';
+import Taro from '@tarojs/taro';
 
 enum ReadyState {
   CONNECTING,
@@ -21,32 +21,35 @@ export default class WebSocket {
 
   constructor(url: string) {
     this.readyState = ReadyState.CONNECTING;
+    this.setup(url);
+  }
 
-    this.ws = global.connectSocket({
+  setup(url: string) {
+    Taro.connectSocket({
       url,
     });
 
-    this.ws.onOpen(() => {
+    Taro.onSocketOpen(() => {
       this.readyState = ReadyState.OPEN;
       if (typeof this.onopen === 'function') {
         this.onopen();
       }
     });
 
-    this.ws.onError((res: any) => {
+    Taro.onSocketError((res: any) => {
       if (typeof this.onerror === 'function') {
         this.onerror(res);
       }
     });
 
-    this.ws.onClose(() => {
+    Taro.onSocketClose(() => {
       this.readyState = ReadyState.CLOSED;
       if (typeof this.onclose === 'function') {
         this.onclose();
       }
     });
 
-    this.ws.onMessage((res: any) => {
+    Taro.onSocketMessage((res: any) => {
       if (typeof this.onmessage === 'function') {
         this.onmessage(res);
       }
@@ -54,7 +57,7 @@ export default class WebSocket {
   }
 
   send(payload: any) {
-    this.ws.send({
+    Taro.sendSocketMessage({
       data: payload,
     });
   }
