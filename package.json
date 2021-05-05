@@ -1,6 +1,6 @@
 {
   "name": "taro-plugin-react-devtools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Taro 小程序端支持 React Devtools",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
@@ -23,5 +23,20 @@
   },
   "dependencies": {
     "react-devtools-core": "^4.13.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivan-94/taro-plugin-react-devtools.git"
+  },
+  "keywords": [
+    "taro",
+    "taro3",
+    "react",
+    "react-devtools"
+  ],
+  "author": "ivan",
+  "bugs": {
+    "url": "https://github.com/ivan-94/taro-plugin-react-devtools/issues"
+  },
+  "homepage": "https://github.com/ivan-94/taro-plugin-react-devtools#readme"
 }
