@@ -13,10 +13,7 @@ try {
       // @ts-ignore
       Node.ELEMENT_NODE = 1;
     }
-    if (
-      typeof Element !== 'undefined' &&
-      Element.prototype.getBoundingClientRect == null
-    ) {
+    if (typeof Element !== 'undefined' && Element.prototype.getBoundingClientRect == null) {
       // @ts-ignore
       Element.prototype.getBoundingClientRect = () => ({
         top: 0,
@@ -28,7 +25,8 @@ try {
   }
 
   console.log(
-    '尝试连接 React DevTools，请忽略连接错误信息，详情请参考 https://github.com/ivan-94/taro-plugin-react-devtools'
+    '尝试连接 React DevTools，请忽略连接错误信息，详情请参考 https://github.com/ivan-94/taro-plugin-react-devtools\n\n\n' +
+      `你可以通过 \`yarn global add react-devtools\` 安装开发者工具, 并执行 \`react-devtools\` 启动 \n\n`
   );
 
   connectToDevTools({
